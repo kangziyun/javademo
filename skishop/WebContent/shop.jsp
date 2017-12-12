@@ -55,7 +55,7 @@
 			  <div class="col-md-12">
 				 <div class="header-left">
 					 <div class="logo">
-						<a href="${ctx}index.html"><img src="${ctx}/images/logo.png" alt=""/></a>
+						<a href="${ctx}index.jsp"><img src="${ctx}/images/logo.png" alt=""/></a>
 					 </div>
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="${ctx}/images/nav.png" alt="" /></a>
@@ -117,6 +117,18 @@
       <div class="shop_top">
 		<div class="container">
 			<div class="row shop_box-top">
+			<form method="get" action="${ctx }/kindproduct/list">
+			<select name="choosetype">
+				<option value="0">请选择查询条件</option>
+				<option value="1">查询热门商品</option>
+				<option value="2">查询最新商品</option>
+				<option value="3">根据类别ID查</option>
+				<option value="4">根据商品ID查询</option>
+			</select>
+			<input type="text" name="selectoption" value=""/> 
+			<input type="submit" value="查询"/>
+			</form>
+			<br>
 				<c:forEach items="${products }" var="p">
 				<div class="col-md-3 shop_box"><a href="product?id=${p.id }">
 					<img src="${ctx}/images/pic5.jpg" class="img-responsive" alt=""/>

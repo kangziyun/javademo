@@ -25,11 +25,25 @@ public class OrderDaoImpl {
 		session.getTransaction().commit();
 		
 	}
-	public List<Orders> selectOrder(int userid){
-		String hql = "from Orders where userid=:userid";
+	public List<Orders> selectEditOrder(int userid){
+		String hql = "from Orders where userid=:userid and admitsign=1 and deletesign=0";
 		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
 		query.setParameter("userid", userid);
 		return query.list();
-		
+	}
+	public List<Orders> selectUneditOrder(int userid){
+		String hql = "from Orders where userid=:userid and admitsign=0 and deletesign=0";
+		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
+		query.setParameter("userid", userid);
+		return query.list();
+	}
+	public void deleteOrder(int id){
+		Session session=this.sessionFactory.getCurrentSession();
+		Orders orders = session.get(Orders.class, id);
+		session.beginTransaction();
+		orders.setDeletesign(1);
+		session.flush();
+		session.clear();
+		session.getTransaction().commit();
 	}
 }

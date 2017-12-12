@@ -17,10 +17,25 @@ public class Orders {
 	@Id
 	private int id;
 	private int productid;
+	private String productname;
 	private int productcount;
 	private int userid;
 	private int admitsign;
+	private int deletesign;
 	
+	
+	public int getDeletesign() {
+		return deletesign;
+	}
+	public void setDeletesign(int deletesign) {
+		this.deletesign = deletesign;
+	}
+	public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
 	public int getAdmitsign() {
 		return admitsign;
 	}

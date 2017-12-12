@@ -1,6 +1,13 @@
 package com.skishop.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="producttype")
 public class ProductType {
+@Id
  private int id;
  private String name;
 public int getId() {

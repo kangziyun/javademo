@@ -20,10 +20,7 @@ public class LoginUserServiceImpl {
 		List l=this.loginUserDaoImpl.findByUsername(name);
 		User u = (User) l.get(0);
 		if(l!=null){
-			System.out.println(u.getName());
-			System.out.println(u.getPassword());
 			if(u.getPassword().equals(pwd)){
-				System.out.println("登陆成功");
 				return u;
 			}else{
 				return null;

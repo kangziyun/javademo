@@ -9,7 +9,7 @@ public class Page<T> {
 	private int prePageNum;
 	private int nextPageNum;
 	private int totalPageNum;
-	private int totalCount;
+	private Long totalCount;
 	public Page(){}
 	public Page(int pageNum,int pageSize){
 		this.currentPageNum=pageNum;
@@ -51,15 +51,15 @@ public class Page<T> {
 	public void setTotalPageNum(int totalPageNum) {
 		this.totalPageNum = totalPageNum;
 	}
-	public int getTotalCount() {
+	public Long getTotalCount() {
 		return totalCount;
 	}
-	public void setTotalCount(int totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount%pageSize == 0){
-			totalPageNum = totalCount/pageSize;
+	public void setTotalCount(Long count) {
+		this.totalCount = count;
+		if(count%pageSize == 0){
+			totalPageNum = (int) (count/pageSize);
 		}else{
-			totalPageNum = totalCount/pageSize+1;
+			totalPageNum = (int) (count/pageSize+1);
 		}
 		if(currentPageNum>1){
 			prePageNum=currentPageNum-1;

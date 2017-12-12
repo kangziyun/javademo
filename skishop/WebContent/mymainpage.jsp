@@ -117,12 +117,51 @@
 	    </div>
 	</div>
 	 <div class="main">
-			<form action="">
-				用户名 :<font>${user.name }</font><br>
-				新邮箱：<input type="text" name="mailaddress" value="${user.mailaddress }"/><br>
+			<form action="${ctx }/mymainpage/submit">
+				用户名 :<font>${user.name }</font><br>  
 				新密码：<input type="text" name="password" value="${user.password }"/><br>
-				收货地址：<input type="text" name="address"/><br>
+				收货地址：<input type="text" name="address" value="${user.address }"/><br>
 				订单详情：
+				<h5>订单未被处理</h5>
+			<table border="1">
+				<thread>
+				<td>序号</td>
+				<td>商品名</td>
+				<td>商品数量</td>
+				<td>配送地址</td>
+				<td></td>
+				</thread>
+				
+				<c:forEach items="${orderuneditlist }" var="orderlist1" varStatus="sta">
+					<tr>
+						<td>${sta.count }</td>
+						<td>${orderlist1.productname }</td>
+						<td>${orderlist1.productcount }</td>
+						<td>${user.address }</td>
+						<td><a href="${ctx}/mymainpage/delete?id=${orderlist1.id }">取消订单</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+			<br>
+			<h5>订单已处理等待发货</h5>
+			<table border="1">
+				<thread>
+				<td>序号</td>
+				<td>商品名</td>
+				<td>商品数量</td>
+				<td>配送地址</td>
+				</thread>
+				
+				<c:forEach items="${ordereditlist }" var="orderlist2" varStatus="sta">
+					<tr>
+						<td>${sta.count }</td>
+						<td>${orderlist2.productname }</td>
+						<td>${orderlist2.productcount }</td>
+						<td>${user.address }</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<input type="submit" value="提交">
 				
 	</form>
 	</div>

@@ -66,7 +66,7 @@
 						    	<li><a href="${ctx}/listproduct/list">商店</a></li>
 								<li><a href="${ctx}/experience.jsp">经验交流</a></li>
 								<li><a href="${ctx}/contact.jsp">联系我们</a></li>	
-								<li><a href="${ctx}/mymainpage.jsp">我的主页</a></li>							
+								<li><a href="${ctx}/mymainpage/show">我的主页</a></li>							
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="${ctx}/js/responsive-nav.js"></script>

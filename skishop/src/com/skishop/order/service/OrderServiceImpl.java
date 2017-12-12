@@ -11,14 +11,19 @@ import com.skishop.entity.Orders;
 import com.skishop.order.dao.OrderDaoImpl;
 
 @Service
-@Transactional(readOnly=true)
 public class OrderServiceImpl {
 	@Resource
 	private OrderDaoImpl orderdaoImpl;
 	public void addOrder(Orders o){
 		this.orderdaoImpl.addOrder(o);
 	}
-	public List<Orders> showOrder(int userid){
-		return this.orderdaoImpl.selectOrder(userid);
+	public List<Orders> showEditOrder(int userid){
+		return this.orderdaoImpl.selectEditOrder(userid);
+	}
+	public List<Orders> showUneditOrder(int userid){
+		return this.orderdaoImpl.selectUneditOrder(userid);
+	}
+	public void deleteOrder(int id){
+		this.orderdaoImpl.deleteOrder(id);
 	}
 }

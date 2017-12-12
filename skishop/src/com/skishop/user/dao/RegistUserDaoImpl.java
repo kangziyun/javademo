@@ -18,7 +18,6 @@ public class RegistUserDaoImpl{
 	private SessionFactory sessionFactory;
 	
 	public void addUser(User u)throws Exception{
-		System.out.println(u.toString());
 		Session session=this.sessionFactory.getCurrentSession();
 		session.save(u);
 		session.flush();   
