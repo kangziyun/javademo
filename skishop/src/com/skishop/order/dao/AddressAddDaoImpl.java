@@ -13,11 +13,12 @@ import com.skishop.entity.User;
 public class AddressAddDaoImpl {
 	@Resource
 	private SessionFactory sessionFactory;
-	public void addAddress(int id,String address){
+	public User addAddress(int id,String address){
 		Session session=this.sessionFactory.getCurrentSession();
 		User u = session.get(User.class, id);
 		u.setAddress(address);
 		session.update(u);
 		session.flush();
+		return u;
 	}
 }

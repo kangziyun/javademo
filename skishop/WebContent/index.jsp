@@ -104,7 +104,7 @@
                           $12.00</span></li>
 						  <div class="login_buttons">
 							 <div class="check_button"><a href="${ctx}/showcart/show">去购物车结算</a></div>
-							 <div class="login_button"><a href="login.jsp">${user.name}登录</a></div>
+							 <div class="login_button"><a href="${ctx}/login.jsp">${user.name}登录</a></div>
 							 <div class="clear"></div>
 						  </div>
 						  <div class="clear"></div>

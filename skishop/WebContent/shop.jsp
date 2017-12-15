@@ -125,7 +125,7 @@
 				<option value="3">根据类别ID查</option>
 				<option value="4">根据商品ID查询</option>
 			</select>
-			<input type="text" name="selectoption" value=""/> 
+			<input type="text" name="selectoption" value="0"/> 
 			<input type="submit" value="查询"/>
 			</form>
 			<br>

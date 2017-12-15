@@ -152,6 +152,8 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<br>
+			<a href="${ctx }/index.jsp">点击这里回到主页</a>
 	     </div>
 	   </div>
 	  </div>

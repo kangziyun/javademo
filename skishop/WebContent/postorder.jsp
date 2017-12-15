@@ -136,7 +136,7 @@
 			<br>
 			<h5>您的购物车中有${count}件商品,共计${ sum }元</h5>
 			收货地址：
-				<input type="text" name="address" value="${user.address }"><br>
+			<input type="text" name="address" value="${user.address }"><br>
 			 <input type="submit" value="确认并提交订单">
 			 </form>
 	     </div>

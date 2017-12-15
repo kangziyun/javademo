@@ -30,7 +30,8 @@ public class SubmitOrderController {
 	@RequestMapping("/add")
 	public void add(@RequestParam("address") String address,HttpSession session,HttpServletRequest request,HttpServletResponse repsonse){
 		User u = (User) session.getAttribute("user");
-		this.addressserviceImpl.addAddress(u.getId(), address);
+		User user = (User) this.addressserviceImpl.addAddress(u.getId(), address);
+		session.setAttribute("user", user);
 		List<CartItem> l = (List) session.getAttribute("cartlist");
 		for(CartItem ci:l){
 			Orders o = new Orders();
@@ -41,6 +42,7 @@ public class SubmitOrderController {
 			o.setAdmitsign(0);
 			o.setDeletesign(0);
 			this.orderserviceImpl.addOrder(o);
+			
 		}
 		
 		try {
